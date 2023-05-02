@@ -1,0 +1,11 @@
+img {
+    max-width: 25%;
+    max-height:50%;
+   }
+
+.text{
+    margin: -37px 0 16px;
+}
+.full-width{
+    width: 100%;
+}
