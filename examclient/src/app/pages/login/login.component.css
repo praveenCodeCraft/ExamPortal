@@ -1,0 +1,17 @@
+/* .text-center{
+text-align: center;
+} */
+
+
+.full-width{
+    width: 90%;
+}
+
+.mat-card {
+    box-shadow: 0 15px 25px rgba(7, 1, 20, 0.2);
+    border-radius: 20px;
+    backdrop-filter: blur(10px);
+    background-color: rgba(198, 182, 221, 0.2);
+    padding: 20px;
+   
+}

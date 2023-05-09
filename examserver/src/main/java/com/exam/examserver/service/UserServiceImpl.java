@@ -6,6 +6,7 @@ import com.exam.examserver.repo.RoleRepository;
 import com.exam.examserver.repo.UserRepository;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import java.util.Set;
@@ -19,6 +20,8 @@ public class UserServiceImpl implements UserService {
     @Autowired
     private RoleRepository roleRepository ;
 
+    @Autowired
+    private PasswordEncoder passwordEncoder;
     //create users
     @Override
     public User createUser(User user, Set<UserRole> userRoles) throws Exception {
@@ -34,6 +37,7 @@ public class UserServiceImpl implements UserService {
             }
              user.getUsersRole().addAll(userRoles);
              user.setProfile("default.png");
+             user.setPassword(passwordEncoder.encode(user.getPassword()));
              newUser =  this.userRepository.save(user);
         }
         return newUser;

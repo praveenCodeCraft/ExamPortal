@@ -1,1 +1,9 @@
-<p>navbar works!</p>
+<mat-toolbar style="background-color: #a37bb1;" >
+  <a routerLink="/" mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
+    <mat-icon>menu_book</mat-icon>
+  </a>
+  <span>ExamPortal</span>
+  <span class="example-spacer"></span>
+  <a [routerLink]="'/login'" mat-icon-button class=""  style="font-size: medium;" >Login</a>
+  <a [routerLink]="'/signup'" mat-icon-button class="mr20 ml10 " style="font-size: medium;">Register</a>
+</mat-toolbar>

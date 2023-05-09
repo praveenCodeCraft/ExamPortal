@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Router } from '@angular/router';
 import { UserService } from 'src/app/services/user.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-signup',
@@ -44,10 +45,11 @@ export class SignupComponent implements OnInit{
     //   }
     //  );
     
-    this.userService.addUsers(this.users).subscribe(
-      (data) => {
+    this.userService.addUsers(this.users).subscribe( 
+      (data: any) => {
         console.log(data);
-        alert("success login");
+        // alert("success login");
+        Swal.fire("Successfully Done !!", "User Regsitered Successfully" ,"success");
       },
       (error)=>{
         console.log(error);

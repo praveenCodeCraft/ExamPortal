@@ -1,5 +1,7 @@
 
 #database configuration
+server:
+  port: 8080
 
 spring:
   datasource:
